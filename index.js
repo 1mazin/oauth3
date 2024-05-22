@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+const path = require('path');
 require('dotenv').config();
 
 const clientId = process.env.CLIENT_ID;
@@ -9,7 +10,7 @@ const clientSecret = process.env.CLIENT_SECRET;
 app.get('/', (req, res) => {
     res.send('<a href="/login">Log in with GitHub</a>');
 });
-app.get('/privacy-policy', (req, res) => {
+app.get('/privacy_policy', (req, res) => {
     res.sendFile(path.join(__dirname, 'privacy-policy.html'));
 });
 
