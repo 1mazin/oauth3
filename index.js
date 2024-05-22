@@ -9,6 +9,9 @@ const clientSecret = process.env.CLIENT_SECRET;
 app.get('/', (req, res) => {
     res.send('<a href="/login">Log in with GitHub</a>');
 });
+app.get('/privacy-policy', (req, res) => {
+    res.sendFile(path.join(__dirname, 'privacy-policy.html'));
+});
 
 app.get('/login', (req, res) => {
     const redirectUri = 'https://oauth3-virid.vercel.app/callback'; // Update with your Vercel URL
