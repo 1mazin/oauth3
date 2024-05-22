@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    const redirectUri = 'http://localhost:3000/callback';
+    const redirectUri = 'https://oauth3-virid.vercel.app/callback'; // Update with your Vercel URL
     const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=read:user`;
     res.redirect(githubAuthUrl);
 });
